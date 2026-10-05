@@ -1,8 +1,10 @@
 package com.deepika.payments.model;
 
+import com.deepika.payments.check.Check;
+
 public class SepaInstantPayment extends Payment {
-    public SepaInstantPayment(String id, double amount) {
-        super(id, amount);
+    public SepaInstantPayment(String id, double amount, Check check) {
+        super(id, amount, check);
     }
 
     @Override
