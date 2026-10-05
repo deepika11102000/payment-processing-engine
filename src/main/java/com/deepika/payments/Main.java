@@ -1,7 +1,19 @@
 package com.deepika.payments;
 
+import com.deepika.payments.model.Payment;
+import com.deepika.payments.model.SepaPayment;
+import com.deepika.payments.model.SwiftPayment;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Payment Processing Engine started");
+        Payment[] payments = {
+            new SepaPayment("P1", 5000, "DE89370400440532013000"),
+            new SwiftPayment("P2", 10001, "DEUTDEFF")
+        };
+
+        for (Payment p : payments) {
+            p.send();
+            System.out.println(p.getId() + " -> " + p.getStatus());
+        }
     }
 }
